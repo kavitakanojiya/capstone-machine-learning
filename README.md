@@ -12,9 +12,9 @@ Testing set is placed under `author detection datasets` as `test.csv`.
 ### Quick glimpse on the data distribution
 These can found under `images`.
 
-* `training_set.png` shows first 5 tuples from the training dataset.
-* `testing_set.png` shows first 5 tuples from the testing dataset.
-* `training_dataset_statistics.png` describe the data parameters for each columns separately.
-* `testing_dataset_post_process.png` captures the length of text in addition.
-* `training_dataset_statistics.png` shows the distribution of data from the training dataset.
-* `EAP.png`, `HPL.png` and `MWS.png` describe the summary statistics of the data of each authors.
+[**training_set.png**](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/author%20detection%20datasets/train.csv)<br>
+[**testing_set.png**](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/author%20detection%20datasets/test.csv)<br>
+[**training_dataset_statistics.png**](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/author%20detection%20datasets/test.csv)<br>
+[**testing_dataset_post_process.png**](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/author%20detection%20datasets/test.csv)<br>
+[**training_dataset_statistics.png**](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/author%20detection%20datasets/test.csv)<br>
+[**EAP.png**](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/images/EAP.png), [**HPL.png**](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/images/HPL.png), [**MWS.png**](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/images/MWS.png) describes the summary statistics of the data of each authors.
