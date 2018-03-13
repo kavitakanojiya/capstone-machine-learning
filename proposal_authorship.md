@@ -56,7 +56,7 @@ When we say classification, we have both features and labels within the data to 
 
 Attached is the glimpse of `train.csv` file to represent the format of the data. Each row has the text message to identify the semantics and these are already identified for the authorship.
 
-![alt text](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/author%20detection%20statistics/training_set.png "Training Set samples")
+![alt text](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/images/training_set.png "Training Set samples")
 
 1. `id`: Each document is unique and hence, they are identified with unique ID.
 
@@ -75,7 +75,7 @@ Every document is identified with an author respectively.
 
 Attached is the glimpse of `test.csv` file to represent the format of the data. Each row has the text message of authorship has to be predicted.
 
-![alt text](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/author%20detection%20statistics/testing_set.png "Testing Set samples")
+![alt text](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/images/testing_set.png "Testing Set samples")
 
 1. `id`: Each document is unique and hence, they are identified with unique ID.
 
@@ -86,7 +86,7 @@ Since we are supposed to predict the author for testing data, our target variabl
 
 3. Statistics of training dataset
 
-![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/author%20detection%20statistics/statistics%20of%20training%20dataset.png "Training Set statistics")
+![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/training_dataset_statistics.png "Training Set statistics")
 
 
 4. Pre-defined authors list
