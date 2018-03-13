@@ -49,20 +49,18 @@ Now, we have set the objective of this project to identify potential owner or au
 
 When we say classification, we have both features and labels within the data to explore.
 
-#### Datasets
 
-
-1. Training set
+**Training Set**
 
 Attached is the glimpse of `train.csv` file to represent the format of the data. Each row has the text message to identify the semantics and these are already identified for the authorship.
 
-![alt text](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/images/training_set.png "Training Set samples")
+![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/training_set.png "Training Set samples")
 
-1. `id`: Each document is unique and hence, they are identified with unique ID.
+* *_id_*: Each document is unique and hence, they are identified with unique ID.
 
-2. `text`: Each document has a text as a feature for the training model.
+* *_text_*: Each document has a text as a feature for the training model.
 
-3. `author`: Each document has an associated author to dictate the authorship.
+* *_author_*: Each document has an associated author to dictate the authorship.
 
 We will limit the data to follow only English language to explore with. This will be our features.
 
@@ -70,41 +68,38 @@ We shall limit the number of authors too to keep it simple. This will be our lab
 
 Every document is identified with an author respectively.
 
-
-2. Testing set
+**Testing Set**
 
 Attached is the glimpse of `test.csv` file to represent the format of the data. Each row has the text message of authorship has to be predicted.
 
-![alt text](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/images/testing_set.png "Testing Set samples")
+![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/testing_set.png "Testing Set samples")
 
-1. `id`: Each document is unique and hence, they are identified with unique ID.
+* *_id_*: Each document is unique and hence, they are identified with unique ID.
 
-2. `text`: Each document has a text as a feature for the training model.
+* *_text_*: Each document has a text as a feature for the training model.
 
 Since we are supposed to predict the author for testing data, our target variable is `author` itself.
 
-
-3. Statistics of training dataset
+**Statistics of training dataset**
 
 ![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/training_dataset_statistics.png "Training Set statistics")
 
+**Pre-defined authors list**
 
-4. Pre-defined authors list
+* EAP: Edgar Allan Poe
 
-⋅⋅⋅EAP: Edgar Allan Poe
+* HPL: HP Lovecraft
 
-⋅⋅⋅HPL: HP Lovecraft
-
-⋅⋅⋅MWS: Mary Wollstonecraft Shelley
+* MWS: Mary Wollstonecraft Shelley
 
 
-5. Author's data distribution
+**Author's data distribution**
 
-![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/author%20detection%20statistics/EAP.png "EAP: Edgar Allan Poe")
+![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/EAP.png "EAP: Edgar Allan Poe")
 
-![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/author%20detection%20statistics/HPL.png "HPL: HP Lovecraft")
+![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/HPL.png "HPL: HP Lovecraft")
 
-![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/author%20detection%20statistics/MWS.png "MWS: Mary Wollstonecraft Shelley")
+![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/MWS.png "MWS: Mary Wollstonecraft Shelley")
 
 
 ### Solution Statement
