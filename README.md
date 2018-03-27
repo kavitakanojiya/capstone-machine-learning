@@ -17,3 +17,6 @@ These can found under `images`.
 [**training_dataset_statistics.png**](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/images/training_dataset_statistics.png) describes the data parameters for each columns separately.<br>
 [**testing_dataset_post_process.png**](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/images/testing_dataset_post_process.png) captures the length of text in addition.<br>
 [**EAP.png**](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/images/EAP.png), [**HPL.png**](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/images/HPL.png), [**MWS.png**](https://github.com/kavitakanojiya/capstone-machine-learning/blob/master/images/MWS.png) describes the summary statistics of the data of each authors.
+
+### Installation
+Python version 3.6
