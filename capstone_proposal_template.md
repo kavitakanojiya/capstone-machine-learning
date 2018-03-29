@@ -1,10 +1,9 @@
 # Machine Learning Engineer Nanodegree
 ## Capstone Project
-Joe Udacity  
-December 31st, 2050
+Kavit Kanojiya
+March 29th, 2018
 
 ## I. Definition
-_(approx. 1-2 pages)_
 
 ### Project Overview
 Since ancient days, discoveries, patents, analyses were and are often documented. It does not matter how they are documented.
@@ -55,7 +54,6 @@ Primarily, we shall focus on two things:
 
 
 ## II. Analysis
-_(approx. 2-4 pages)_
 
 ### Data Exploration
 
@@ -329,7 +327,6 @@ Mary Wollstonecraft Shelley was an English novelist, short story writer, dramati
 In the end, when we train our unlabeled dataset, we found the same keywords from text documents were properly classified among the authors.
 
 ## V. Conclusion
-_(approx. 1-2 pages)_
 
 ### Free-Form Visualization
 
