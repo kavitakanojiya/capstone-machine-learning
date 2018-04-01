@@ -28,9 +28,9 @@ Authorship attribution is supported by computational and statical analysis that 
 
 Researchers have been working intensely to address this issue in order to grow the community. There are bunch of papers that highlights this problem into the depth.
 
-- ![Đlker Nadi Bozkurt, Özgür Bağlıoğlu and Erkan Uyar](https://pdfs.semanticscholar.org/e629/2ad3324a248774657cb6ea0342ec50b41c7b.pdf "semanticscholar.org")
-- ![Efstathios Stamatatos](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.440.1634&rep=rep1&type=pdf "ist.psu.edu")
-- ![Moshe Koppel, Jonathan Schler and Shlomo Argamon](https://brooklynworks.brooklaw.edu/cgi/viewcontent.cgi?referer=https://www.google.co.in/&httpsredir=1&article=1045&context=jlp "brooklaw.edu")
+- [Đlker Nadi Bozkurt, Özgür Bağlıoğlu and Erkan Uyar](https://pdfs.semanticscholar.org/e629/2ad3324a248774657cb6ea0342ec50b41c7b.pdf)
+- [Efstathios Stamatatos](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.440.1634&rep=rep1&type=pdf)
+- [Moshe Koppel, Jonathan Schler and Shlomo Argamon](https://brooklynworks.brooklaw.edu/cgi/viewcontent.cgi?referer=https://www.google.co.in/&httpsredir=1&article=1045&context=jlp)
 
 Most of these papers focuses on text representation, text classification and computational methods. However, authorship attribution is one of the expected outcomes from the given dataset. Moreover, it hints towards how statements are constructed, what words are emphasized, what mistakes are detected that contributes the differentiation, etc. This is all about information retrieval and text mining.
 
@@ -76,16 +76,37 @@ The limitation of this project is to build an interface that will identify Engli
 
 Stylometry and authorship attribution deals with the patterns of the writings, language semantics and language itself. We have to consider stopwords and punctuations both.
 
-As this is feature-based classification problem, we are going to use Supervised Learning algorithm to solve this.
+As we discussed, there are various features involved to look at this problem with different angles. They are _lexical features_, _character features_ and _semantic features_.
 
-We will need to identify the patterns of the texts that will help me to identify the patterns adopted by the author.
+Considering features, _heatmap_ is one of visualizations that will help us to determine the distribution of words, what punctuations are used, how many uppercased letters are used by each author, mean word length and total length of each text.
 
-Before finalising the learning algorithm, we will evaluate few of the algorithms for their performance and accuracy. Benchmark model is created using the training dataset.
+Reflects number of words distribution of each author. X-axis grabs the run from minimum to maximum count of total number of words and Y-axis reflects the authors.
 
-Primarily, we shall focus on two things:
-- Since the number of authors are limited in this problem, we are generating the wordclouds for each author. This will enable us to notice the keywords that each author emphasizes.
-- How words are used, how unique words are used, punctuations being used? These will be analysed with heatmaps.
+![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/number_of_words.png "Number of words")
 
+
+Reflects number of punctuations of each author. X-axis grabs the run from minimum to maximum count of total number of punctuations and Y-axis reflects the authors.
+![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/number_of_punctuations.png "Number of punctuations")
+
+Reflects number of unique words of each author. X-axis grabs the run from minimum to maximum count of total number of unique words and Y-axis reflects the authors.
+![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/number_of_unique_words.png "Number of unique words")
+
+These heatmaps shows the patterns that each author adopted.
+
+Till here, we didn't get much information of author and their area of interesets. This includes the choices of words that these authors are famous for.
+
+Wordcloud is the another visualization that helps us to analyse what words does these authors emphasizes.
+
+Words like death, soul, life, corpse, spirit and shadow better describes his _Edgar Allan Poe_ interests. He is famous for mystery and macabre.
+![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/EAP_wordclouds.png "EAP wordclouds")
+
+Words like fear, horror and body describes his interests. So, _Howard Phillips Lovecraft_ is famous for horror.
+![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/HPL_wordclouds.png "HPL wordclouds")
+
+Words like love, affection, happiness, misery, despair, beauty and pleasure best describes _Mary Wollstonecraft Shelley_ interests.
+![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/MWS_wordclouds.png "MWS wordclouds")
+
+In all, _heatmaps_ and _wordclouds_ helped us to identify the distribution of words and what words are being used by each author.
 
 ## II. Analysis
 
@@ -246,16 +267,118 @@ We will use CountVectorizer to create our vectors and this is our new features o
 
 ### Implementation
 
-As discussed in the above step, we required to perform certain steps to vectorize data and transform author to be numeric.
+In order to implement the solution for a given problem, it is utmost necessary that we understand the problem, the area in which this solution will be helpful and the background domain.
+Lets go through one-by-one step in detail:
 
-Multinomial Naive Bayes is all we chose to train on our dataset due to its performance and accuracy.
+**Undergoing through domain**
+Since ancient days, discoveries, patents, analyses were and are often documented. It does not matter how they are documented.
 
-The dataset we fed into MNB is the vectorized data that we generated using CountVectorizer which is known as Features.
-The labels which fed to into MNB is the numerical_author is generated by mapping of numbers from 0 to 1.
+They can be documented either in the form of wall paintings or wall embedded drawings or any sort of scripts.
 
-![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/processed_text_vectors.png "Processed vectors from texts")
+Older documents are often referred to continue the research even now in every fields like literature, experiments, myths, etc.
 
-![alt text](https://raw.githubusercontent.com/kavitakanojiya/capstone-machine-learning/master/images/fit_data.png "Fitting of training data")
+However, it is necessary for the seeker or organisation that the authenticity of these documents are met. Still, there could be lots of anonymous and non-classified documents exists.
+
+So, how were these documents verified? In the ancient days, these were all manually verified. There are different patterns like style of writing, language of communication, etc. of understand from where these documents came in and potentially by whom. Also, do we have any similar documents identified earlier?
+
+This is broadly known as Stylometry. Stylometry deals with the study of linguistic style and is widely adopted across academic, literary, music and fine arts. Also, known as authorship attribution.
+
+Also, now-a-days, the anonymous nature of online-message distribution makes identity tracing a critical problem in our society where everything is online
+
+**Datasets**
+We shall hold ourselves and limit our practive with the minimum dataset. The attached dataset holds for only three authors and they are:
+* _Edgar Allan Poe [EAP]_ is best known for his poetry and short stories, particularly his tales of mystery and the macabre.
+
+* _Howard Phillips Lovecraft [HWS]_ was an American writer who achieved posthumous fame through his influential works of horror fiction.
+
+* _Mary Wollstonecraft Shelley [MWS]_ was an English novelist, short story writer, dramatist, essayist, biographer, and travel writer.
+
+
+**Data Exploration**
+Data fields in the training dataset reflects following columns:
+* `id` - a unique identifier for each sentence
+
+* `text` - some text written by one of the authors and is our feature.
+
+* `author` - the author of the sentence (EAP: Edgar Allan Poe, HPL: HP Lovecraft; MWS: Mary Wollstonecraft Shelley). Hence, this is our target variable.
+
+The data fields in testing datasets reflects follwing columns:
+
+* `id` - a unique identifier for each sentence
+
+* `text` - some text written by one of the authors and is our feature.
+
+Definitely, the objective here is predict the potential author of unlabeled dataset.
+
+We have to calculate the distribution of data that this labeled dataset provides.
+
+However, predicting the kinds of semantics that these authors adopts, the text length, the punctuations they use, the unique words they emphaize are one of the important factors to learn the patterns in the data. Heatmap remains our choice.
+
+Heatmap reflects X-axis with the minimum and maximum count for each pattern and Y-axis with all the 3 authors.
+
+This is character-feature and semantic-feature implementation that consider everything in the text document.
+
+Apart from this, these authors has their area of interests so we need to emphasize what words they choose. This is helpful to implement the lexical-feature.
+Wordcloud is our choice to get the glimpse of the words that these concentrates.
+
+**Data preprocessing**
+
+Typically, learning algorithms expect input to be numeric, which requires that non-numeric features (called categorical variables) be converted.
+
+Our target variable `author` in the labeled dataset is converted to numerical entries. Set records with "EAP" to 0, records with "HPL" to 1 and records with "MWS" to 2 and storing it in numerical_author column.
+
+Converting only `author` should not only be the goal, we should perform one-hot encoding like option to our feature set `text`. CountVectorizer is an algorithm that will help to convert words in texts to be features horizontally. How the words are valid for every row in the dataset is marked as 1 and 0.
+
+**Shuffle and split data**
+
+`text` is our feature set and `numerical_author` is our target variable.
+
+Machine Learning models performs better when it receives good distribution of data. For every data that belongs to a category must be trained and tested on the dataset so that model do not generate biased results.
+
+So, from where do we get this labeled data to train and test our models.
+
+It's simple! Our training dataset itself. Our training dataset has all the data that are well classified to each of the authors.
+
+We shall split training dataset into 2 pieces .i.e 80% of training dataset and 20% testing dataset and this is stratified splitting as this will prevent model to generate any biased results.
+
+**Model Evaluation and Performance**
+This is what I would prefer. Pick up bunch of algorithms that would hold for this problem, run the training on the splitted dataset and calculate accuracy score. Training time is also an important factor. Of course, we do not want lon running time for a small dataset.
+
+I, simply provided the splitted dataset to each model without any parameter tuning just to notice and learn how a model performs.
+
+At this stage, I became pretty sure I should be using Multinomial Naive Bayes since the training time and accuracy came to outstanding here. NB is pretty well recognised when it comes to text classification. It is scalable by features wise since a text could have number of words and could be huge.
+
+**Parameter tuning**
+
+Every learning algorith comes with certain parameters that will work best with the dataset provided. Fine tuning them will definitely helps to increase the accuracy.
+Here, `alpha` is the parameter that is required to be tuned. This definitely gave a boost to the accuracy from 0.83 to 0.93 i.e during model evaluation to parameter tuning.
+
+**Model training**
+Fitting the training dataset to the model helps the model to visit all the features and labels provided from the start.
+
+We shall use the same 80-20 distributed data for the training.
+Again, this dataset is vectorized numeric dataset from the splitted dataset.
+
+Fit the `training_vectorizer` to the model. And run the prediction on the remaining 20% dataset.
+
+However, this does not ends here. However, fitting and prediction is done on the labeled dataset. We can verify the values that we got from prediction and what is it in the actual dataset.
+
+_Note:_ Fitting and Prediction gives the probability for each texts in the dataset against each author. The higher the probability is the potential author.
+
+`Accuracy score` on the test set will yield the accuracy how a model performed on the dataset.
+
+`classification_report` helps to learn and analyse the precision and recall scores that model performed on the dataset.
+
+**Prediction**
+
+Till now, we got a good control over the dataset and prediction we got. We are ready to predict the unlabeled dataset.
+
+However, how do I verify if the prediction has got correct results?
+
+It simple!
+
+Wordcloud for each authors from the predicted results. Here, I have compared them with the actual dataset we processed in the early of the implementation.
+
 
 ### Refinement
 
@@ -380,11 +503,27 @@ Below is the wordcloud from author MWS. This focuses on keywords like friend, pl
 
 ### Reflection
 
-With the chosen dataset, atleast we have 3 authors whose area of interests do not overlap. However, authors EAP and HPL does have some common keywords in common since they are famous for mystery and horror respectively. So, keywords like fear, death and body are very common as per their choice.
+The most challenging task involved here are what problem it would solve and where it applicable.
 
-With the steps adopted above, preprocessing, vectorizer, training and prediction remains the basic levels to implement the learning model.
+Cracking any problem is not a big deal anyway now-a-days. Instead, what is the cause of the problem and where does it occurs also matters.
 
-However, keeping their choice of words, area of interests and their writings, they have classified properly.
+It required ample time to invest in researching the documents, papers that focuses on this problem, ways to solve them, what problems we should address, etc. Making decision enough as what problem to address is done by referring lots of documents and papers that were released.
+
+Fitting, training and predicting remains global across all algorithms. Following are the challenges I would to list them down:
+
+_Where does this problem fits in?_
+
+This helped me explore the Stylometry and Authorship Attribution concepts. I came to know that this is not the new problem. This has been around in the existence since 10 years.
+
+_How do I find patterns in the data?_
+
+This helped me to identify the patterns in the writing of the given 3 authors with heatmaps. Wordclouds helped me to identify the words that these 3 authors chooses.
+
+_How do I validate the prediction over the unlabeled dataset?_
+
+This is something took ample time to figure out how to validate the outcomes. Nothing came out when I researched. But, instead I made use of wordclouds for the predicted unlabeled dataset and compared them with the wordclouds of the labeled dataset. 
+
+Moreover, this comparison gave me the correct outcomes that I intend to figure out.
 
 ### Improvement
 Right now, we have considered all the text documents without excluding stopwords and punctations which contributed to the increasing number of features.
