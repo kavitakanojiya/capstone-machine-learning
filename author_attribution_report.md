@@ -22,6 +22,29 @@ Also, now-a-days, the anonymous nature of online-message distribution makes iden
 
 We will be dealing with the classification problem on documents, texts, etc that went unidentified.
 
+#### Authorship Attribution
+
+Authorship attribution is supported by computational and statical analysis that has been around since 19th century. Due to the expansion on the communication technologies and growing population, researches, there could be and will be disputed documents about their originality and discoveries. With the growing time, text mining, information retrieval and natural language processing came into the light to solve this problems.
+
+Researchers have been working intensely to address this issue in order to grow the community. There are bunch of papers that highlights this problem into the depth.
+
+- ![Đlker Nadi Bozkurt, Özgür Bağlıoğlu and Erkan Uyar](https://pdfs.semanticscholar.org/e629/2ad3324a248774657cb6ea0342ec50b41c7b.pdf "semanticscholar.org")
+- ![Efstathios Stamatatos](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.440.1634&rep=rep1&type=pdf "ist.psu.edu")
+- ![Moshe Koppel, Jonathan Schler and Shlomo Argamon](https://brooklynworks.brooklaw.edu/cgi/viewcontent.cgi?referer=https://www.google.co.in/&httpsredir=1&article=1045&context=jlp "brooklaw.edu")
+
+Most of these papers focuses on text representation, text classification and computational methods. However, authorship attribution is one of the expected outcomes from the given dataset. Moreover, it hints towards how statements are constructed, what words are emphasized, what mistakes are detected that contributes the differentiation, etc. This is all about information retrieval and text mining.
+
+In simple words, this is very similar to what a detective do. He goes to a house under a crime scene, notices each and every objects in a house, grabs the potential hints and analyses them, talks to the suspects, understands the patterns, etc. So, relating this with the machine learning steps involved in this problem comes to be as:
+
+Detective actions | Machine Learning
+------- | ----------------
+Goes into a house under a crime scene  | Read the dataset
+Notices each and every objects in a house  | Analyse what dataset has (columns and rows)
+Grabs the potential hints | Data visualization
+Talking to the suspects | Data preprocessing
+Understanding the patterns | Data exploration
+
+
 ### Problem Statement
 
 Everytime, we always look for any signs or discoveries from the ancient times. Anything that were found can never be unwritten or undocumented.
@@ -32,7 +55,18 @@ Before believing or release to other communities, we make our best efforts to fi
 
 Out of 200+ languages, several writing patterns, it is a bit tedious tasks to manual identify or study these documents.
 
-However, even if documents are identified and studied, the explanation has to be written somewhere for other researches to access.
+However, even if documents are identified and studied, the explanation has to be written somewhere for other researches to access. There are various challenges involved in this problem. Lets discuss below:
+
+**Stylometric features**
+This involves features involved in text representation for the patterns an author adopts. This includes lexical and characters features.
+
+_Lexical features_ empahizes on the way we tokenize, stem and lemmatize the texts involved. This is a scalable option since this is not binded to any specific language.
+
+_Character features_ empahizes on how each is represented in the texts. This involves punctuations, alphabets count, uppercased and downcased words and word frequencies.
+
+_Semantic features_ mostly deals with NLP where we focus on part of speech that looks for grammatical construction.
+
+However, we shall explore _Character features_ implementation. We shall consider every characters i.e punctuations, stopwords, etc to understand the patterns in the writings of each author.
 
 The objective here is to enable prediction of documents in order to identify the potential author or owner of the documents which is very tedious if we handle them manually.
 
@@ -40,7 +74,7 @@ The limitation of this project is to build an interface that will identify Engli
 
 ### Metrics
 
-Stylometry and author attribution deals with the patterns of the writings, language semantics and language itself. We have to consider stopwords and punctuations both.
+Stylometry and authorship attribution deals with the patterns of the writings, language semantics and language itself. We have to consider stopwords and punctuations both.
 
 As this is feature-based classification problem, we are going to use Supervised Learning algorithm to solve this.
 
